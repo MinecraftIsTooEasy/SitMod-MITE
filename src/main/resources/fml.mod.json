@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "sit-mod",
+  "version": "${version}",
+  "depends": {
+    "fishmodloader": ">=3.0.0"
+  },
+  "environment": "*",
+  "name": "SitMod",
+  "description": "允许你右键楼梯或台阶并坐下",
+  "icon": "icon.png",
+  "authors": [
+    "XiaoYu233",
+    "Debris"
+  ],
+  "entrypoints": {
+    "main": [
+      "com.github.Debris.SitMod.SitMod"
+    ]
+  },
+  "mixins": [
+    "SitMod.mixins.json"
+  ]
+}
