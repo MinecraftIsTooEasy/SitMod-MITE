@@ -1,6 +1,6 @@
-package com.github.Debris.SitMod.mixins;
+package moddedmite.sitmod.mixins;
 
-import com.github.Debris.SitMod.util.SitUtil;
+import moddedmite.sitmod.util.SitUtil;
 import net.minecraft.*;
 import org.spongepowered.asm.mixin.Mixin;
 import org.spongepowered.asm.mixin.injection.At;
@@ -15,11 +15,10 @@ public abstract class BlockStairsMixin extends Block {
     @Redirect(method = "hidesAdjacentSide", at = @At(value = "INVOKE", target = "Lnet/minecraft/EnumFace;getOpposite()Lnet/minecraft/EnumFace;"))
     private EnumFace redirectFaceGet(EnumFace instance, IBlockAccess block_access, int x, int y, int z, Block neighbor, int side) {
         return EnumFace.get(MathHelper.clamp_int(side, 0, 5));
-    }
+    }// unsure what it's doing, just keep it.
 
     @Override
     public boolean onBlockActivated(World world, int x, int y, int z, EntityPlayer player, EnumFace face, float offset_x, float offset_y, float offset_z) {
         return SitUtil.consumeBlockActivation(world, x, y, z, player, this);
-    }
-
+    }// it overrides and mess up
 }

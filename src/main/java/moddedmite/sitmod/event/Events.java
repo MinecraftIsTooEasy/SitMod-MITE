@@ -1,7 +1,7 @@
-package com.github.Debris.SitMod.event;
+package moddedmite.sitmod.event;
 
-import com.github.Debris.SitMod.entity.EntitySit;
-import com.github.Debris.SitMod.SitMod;
+import moddedmite.sitmod.entity.EntitySit;
+import moddedmite.sitmod.SitMod;
 import com.google.common.eventbus.Subscribe;
 import net.xiaoyu233.fml.reload.event.EntityRegisterEvent;
 import net.xiaoyu233.fml.reload.utils.IdUtil;

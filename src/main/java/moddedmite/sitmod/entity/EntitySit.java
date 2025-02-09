@@ -1,6 +1,7 @@
-package com.github.Debris.SitMod.entity;
+package moddedmite.sitmod.entity;
 
-import com.github.Debris.SitMod.util.SitUtil;
+import moddedmite.sitmod.api.SitContext;
+import moddedmite.sitmod.util.SitUtil;
 import net.minecraft.Block;
 import net.minecraft.EntityLiving;
 import net.minecraft.IAnimals;
@@ -21,11 +22,16 @@ public class EntitySit extends EntityLiving implements IAnimals {
             this.setDead();
             return;
         }
-        Block block = this.worldObj.getBlock(this.getBlockPosX(), this.getBlockPosY(), this.getBlockPosZ());
-        if (!(SitUtil.isValidSeat(block))) {
+        int blockPosX = this.getBlockPosX();
+        int blockPosY = this.getBlockPosY();
+        int blockPosZ = this.getBlockPosZ();
+        Block block = this.worldObj.getBlock(blockPosX, blockPosY, blockPosZ);
+        int metadata = this.worldObj.getBlockMetadata(blockPosX, blockPosY, blockPosZ);
+        SitContext context = new SitContext(this.worldObj, blockPosX, blockPosY, blockPosZ, this.riddenByEntity, block, metadata);
+        if (!(SitUtil.isValidSeat(context))) {
             this.setDead();
         }
-        if (SitUtil.canRotateFreely(block)) {
+        if (SitUtil.canRotateFreely(context)) {
             this.rotationYaw = this.riddenByEntity.rotationYaw;
         }
     }

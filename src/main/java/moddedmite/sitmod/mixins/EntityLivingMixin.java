@@ -1,6 +1,6 @@
-package com.github.Debris.SitMod.mixins;
+package moddedmite.sitmod.mixins;
 
-import com.github.Debris.SitMod.entity.EntitySit;
+import moddedmite.sitmod.entity.EntitySit;
 import net.minecraft.EntityLiving;
 import net.minecraft.EntityLivingBase;
 import net.minecraft.World;

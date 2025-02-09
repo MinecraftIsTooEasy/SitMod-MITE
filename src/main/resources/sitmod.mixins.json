@@ -1,15 +1,15 @@
 {
   "required": true,
-  "package": "com.github.Debris.SitMod.mixins",
+  "package": "moddedmite.sitmod.mixins",
   "compatibilityLevel": "JAVA_17",
   "target": "DEFAULT",
   "minVersion": "0.8.3",
   "mixins": [
-    "BlockSlabMixin",
+    "BlockMixin",
     "BlockStairsMixin",
     "EntityLivingMixin"
   ],
   "injectors": {
     "defaultRequire": 1
-	}
+  }
 }
